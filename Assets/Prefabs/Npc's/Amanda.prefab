@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 212974656894593504}
   - component: {fileID: 95528015090543784}
   - component: {fileID: 114594232142342232}
-  - component: {fileID: 4669283055758280618}
+  - component: {fileID: 3861570650448157743}
   m_Layer: 0
   m_Name: Amanda
   m_TagString: Untagged
@@ -113,15 +113,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ef7b85a39fa1b438943c88d4e1cec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleForward: 1
+  idleForward: 0
   idleBack: 0
   idleLeft: 0
   idleRight: 0
-  walkForward: 0
+  walkForward: 1
   walkBack: 0
   walkLeft: 0
   walkRight: 0
---- !u!61 &4669283055758280618
+--- !u!61 &3861570650448157743
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,5 +145,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14, y: 0.26}
+  m_Size: {x: 0.16, y: 0.28}
   m_EdgeRadius: 0.05

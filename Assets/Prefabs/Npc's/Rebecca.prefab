@@ -117,7 +117,7 @@ MonoBehaviour:
   idleBack: 0
   idleLeft: 0
   idleRight: 0
-  walkForward: 0
+  walkForward: 1
   walkBack: 0
   walkLeft: 0
   walkRight: 0
