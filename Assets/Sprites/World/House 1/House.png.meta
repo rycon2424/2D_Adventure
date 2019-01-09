@@ -3,6 +3,7 @@ guid: 73b34fad19eb9504b8a1873a7935b186
 TextureImporter:
   fileIDToRecycleName:
     21300000: House_0
+    21300002: House_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -100,9 +101,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 96
         width: 214
-        height: 182
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,7 +111,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0981a70789d4be74b80c55474af4a20d
+      spriteID: 8a70c43164e51904b96c0515774ee4f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: House_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 214
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be0c9f637c73644f92f3ee8999ef141
       vertices: []
       indices: 
       edges: []
