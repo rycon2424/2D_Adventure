@@ -1052,7 +1052,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WalkTest: 0
-  playerScript: {fileID: 2077559135}
+  WalkText: {fileID: 0}
+  playerScript: {fileID: 0}
   following: 0
 --- !u!1 &628381677
 GameObject:
@@ -12390,10 +12391,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 454691231}
-    - target: {fileID: 114932599712418084, guid: d4442fefeccb259478148ba920962d8b,
+    - target: {fileID: 7470729369363805271, guid: d4442fefeccb259478148ba920962d8b,
         type: 3}
-      propertyPath: waitTime
-      value: 3
+      propertyPath: m_Text
+      value: Rebecca
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4442fefeccb259478148ba920962d8b, type: 3}
@@ -12572,6 +12573,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 4.799988
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470729369363805271, guid: d4442fefeccb259478148ba920962d8b,
+        type: 3}
+      propertyPath: m_Text
+      value: Rebecca
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4442fefeccb259478148ba920962d8b, type: 3}
@@ -12761,18 +12767,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2077559135 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 468503948138681869, guid: 39aa12bb304edba46bd13561be1dbe1a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2086921564}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dc4a95369212a64a9440092c5a3c7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2086921564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17652,6 +17646,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 4.799988
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470729369363805271, guid: d4442fefeccb259478148ba920962d8b,
+        type: 3}
+      propertyPath: m_Text
+      value: Rebecca
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4442fefeccb259478148ba920962d8b, type: 3}
