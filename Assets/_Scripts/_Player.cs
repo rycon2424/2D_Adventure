@@ -6,10 +6,12 @@ public class _Player : MonoBehaviour
 {
 
     public float speed;
+    private float originalSpeed;
     public Animator playerAnim;
 
     void Start()
     {
+        originalSpeed = speed;
         playerAnim = GetComponent<Animator>();
     }
     
@@ -31,6 +33,26 @@ public class _Player : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector2.down * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W))
+        {
+            speed = originalSpeed * 0.5f;
+        }
+        else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
+        {
+            speed = originalSpeed * 0.5f;
+        }
+        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W))
+        {
+            speed = originalSpeed * 0.5f;
+        }
+        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
+        {
+            speed = originalSpeed * 0.5f;
+        }
+        else
+        {
+            speed = originalSpeed;
         }
         
     }

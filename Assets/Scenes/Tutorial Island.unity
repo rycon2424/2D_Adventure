@@ -169,6 +169,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &34247063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1210364064534488, guid: d4442fefeccb259478148ba920962d8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1975494273}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &62984230
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,6 +1001,8 @@ GameObject:
   - component: {fileID: 544902831}
   - component: {fileID: 544902832}
   - component: {fileID: 544902833}
+  - component: {fileID: 544902834}
+  - component: {fileID: 544902835}
   m_Layer: 0
   m_Name: TextEvents-----------TUTORIAL------------
   m_TagString: Untagged
@@ -1051,11 +1059,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d079c24133801408b3e417474b0ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkTest: 0
-  WalkText: {fileID: 1102910055}
+  walkTest: 0
+  walkText: {fileID: 1102910055}
+  followText: {fileID: 1182366279}
+  enterHouseText: {fileID: 34247063}
   playerScript: {fileID: 0}
   following: 0
   anim: {fileID: 0}
+  startPart3: 0
+--- !u!58 &544902834
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544902830}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -6.6, y: 6.6}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!61 &544902835
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544902830}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.59, y: 12}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.2, y: 2.2}
+  m_EdgeRadius: 0
 --- !u!1 &628381677
 GameObject:
   m_ObjectHideFlags: 0
@@ -5765,6 +5818,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1182366279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1210364064534488, guid: d4442fefeccb259478148ba920962d8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2143947957}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1239635681
 GameObject:
   m_ObjectHideFlags: 0
@@ -12286,7 +12345,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1210364064534488, guid: d4442fefeccb259478148ba920962d8b, type: 3}
       propertyPath: m_Name
-      value: TextDialogue (1)  (WalkText)
+      value: TextDialogue (1) (WalkText)
       objectReference: {fileID: 0}
     - target: {fileID: 224692658362900560, guid: d4442fefeccb259478148ba920962d8b,
         type: 3}
@@ -12579,7 +12638,7 @@ PrefabInstance:
     - target: {fileID: 114932599712418084, guid: d4442fefeccb259478148ba920962d8b,
         type: 3}
       propertyPath: waitTime
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1936562241199908085, guid: d4442fefeccb259478148ba920962d8b,
         type: 3}

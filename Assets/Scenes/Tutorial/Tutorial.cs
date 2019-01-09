@@ -5,11 +5,14 @@ using UnityEngine;
 public class Tutorial : MonoBehaviour
 {
 
-    public bool WalkTest;
-    public GameObject WalkText;
+    public bool walkTest;
+    public GameObject walkText;
+    public GameObject followText;
+    public GameObject enterHouseText;
     public _Player playerScript;
     public bool following;
     public Animator anim;
+    public bool startPart3;
 
     void Start()
     {
@@ -20,15 +23,11 @@ public class Tutorial : MonoBehaviour
     
     void Update()
     {
-        if (WalkTest)
+        if (walkTest)
         {
             Walk();
         }
-
-        if (following)
-        {
-            Follow();
-        }
+        
     }
 
     void Walk()
@@ -37,15 +36,26 @@ public class Tutorial : MonoBehaviour
         {
             playerScript.enabled = true;
             following = true;
-            WalkTest = false;
-            Destroy(WalkText);
+            walkTest = false;
+            Destroy(walkText);
+            followText.SetActive(true);
             anim.Play("TutorialPart2");
         }
     }
 
-    void Follow()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (following)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                following = false;
+                startPart3 = true;
+                anim.Play("TutorialPart3");
+                Destroy(followText);
+                enterHouseText.SetActive(true);
+            }
+        }
     }
 
 }
