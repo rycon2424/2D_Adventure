@@ -38,7 +38,8 @@ public class Tutorial : MonoBehaviour
             playerScript.enabled = true;
             following = true;
             WalkTest = false;
-            //anim.Play("TutorialPart2");
+            Destroy(WalkText);
+            anim.Play("TutorialPart2");
         }
     }
 

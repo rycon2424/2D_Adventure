@@ -1052,9 +1052,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WalkTest: 0
-  WalkText: {fileID: 0}
+  WalkText: {fileID: 1102910055}
   playerScript: {fileID: 0}
   following: 0
+  anim: {fileID: 0}
 --- !u!1 &628381677
 GameObject:
   m_ObjectHideFlags: 0
@@ -5524,6 +5525,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1102910055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1210364064534488, guid: d4442fefeccb259478148ba920962d8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1970315448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1160092529
 GameObject:
   m_ObjectHideFlags: 0
@@ -12216,7 +12223,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1210364064534488, guid: d4442fefeccb259478148ba920962d8b, type: 3}
       propertyPath: m_Name
-      value: TextDialogue (1)
+      value: TextDialogue (1)  (WalkText)
       objectReference: {fileID: 0}
     - target: {fileID: 224692658362900560, guid: d4442fefeccb259478148ba920962d8b,
         type: 3}
@@ -17433,7 +17440,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1210364064534488, guid: d4442fefeccb259478148ba920962d8b, type: 3}
       propertyPath: m_Name
-      value: TextDialogue (2)
+      value: TextDialogue (2)  (FollowText)
       objectReference: {fileID: 0}
     - target: {fileID: 1210364064534488, guid: d4442fefeccb259478148ba920962d8b, type: 3}
       propertyPath: m_IsActive
@@ -17582,7 +17589,7 @@ PrefabInstance:
     - target: {fileID: 114932599712418084, guid: d4442fefeccb259478148ba920962d8b,
         type: 3}
       propertyPath: sentences.Array.data[1]
-      value: Follow me lets get you dry.
+      value: Follow me, lets get you dry..
       objectReference: {fileID: 0}
     - target: {fileID: 1936562241199908085, guid: d4442fefeccb259478148ba920962d8b,
         type: 3}
