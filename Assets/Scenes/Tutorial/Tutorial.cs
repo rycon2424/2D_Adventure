@@ -6,12 +6,15 @@ public class Tutorial : MonoBehaviour
 {
 
     public bool WalkTest;
+    public GameObject WalkText;
     public _Player playerScript;
     public bool following;
+    public Animator anim;
 
     void Start()
     {
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<_Player>();
+        playerScript.enabled = false;
     }
     
     void Update()
@@ -34,6 +37,7 @@ public class Tutorial : MonoBehaviour
             playerScript.enabled = true;
             following = true;
             WalkTest = false;
+            anim.Play("TutorialPart2");
         }
     }
 
