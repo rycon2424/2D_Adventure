@@ -36,19 +36,19 @@ public class _Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W))
         {
-            speed = originalSpeed * 0.5f;
+            speed = originalSpeed * 0.75f;
         }
         else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
         {
-            speed = originalSpeed * 0.5f;
+            speed = originalSpeed * 0.75f;
         }
         else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W))
         {
-            speed = originalSpeed * 0.5f;
+            speed = originalSpeed * 0.75f;
         }
         else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
         {
-            speed = originalSpeed * 0.5f;
+            speed = originalSpeed * 0.75f;
         }
         else
         {
