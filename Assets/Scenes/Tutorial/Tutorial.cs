@@ -15,6 +15,7 @@ public class Tutorial : MonoBehaviour
     {
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<_Player>();
         playerScript.enabled = false;
+        anim = GetComponent<Animator>();
     }
     
     void Update()
@@ -37,7 +38,7 @@ public class Tutorial : MonoBehaviour
             playerScript.enabled = true;
             following = true;
             WalkTest = false;
-            anim.Play("TutorialPart2");
+            //anim.Play("TutorialPart2");
         }
     }
 
