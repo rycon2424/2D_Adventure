@@ -7,6 +7,7 @@ public class BattleMenu : MonoBehaviour
 {
 
     private bool tempfix;
+    private bool tempfix2;
     public GameObject wholeChoiceBar;
     [Header("Attack Options")]
     public Animator choiceAnimation;
@@ -171,6 +172,7 @@ public class BattleMenu : MonoBehaviour
                 choiceIcon.SetActive(false);
                 choiceMade = true;
                 chooseEnemyIcon.SetActive(true);
+                StartCoroutine(TempFix2());
             }
         }
         else if (choice == 2)
@@ -235,6 +237,7 @@ public class BattleMenu : MonoBehaviour
             choiceMade = false;
             choiceIcon.SetActive(true);
             chooseEnemyIcon.SetActive(false);
+            tempfix2 = false;
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -259,7 +262,7 @@ public class BattleMenu : MonoBehaviour
              }
         }
         
-        if (enemyChoice == 1)
+        if (enemyChoice == 1 && tempfix2)
         {
             enemyChoiceAnim.Play("SelectEnemy1");
             if (Input.GetMouseButtonDown(0))
@@ -267,7 +270,7 @@ public class BattleMenu : MonoBehaviour
                 Debug.Log("ThrowAttack1");
             }
         }
-        if (enemyChoice == 2)
+        if (enemyChoice == 2 && tempfix2)
         {
             enemyChoiceAnim.Play("SelectEnemy2");
             if (Input.GetMouseButtonDown(0))
@@ -275,7 +278,7 @@ public class BattleMenu : MonoBehaviour
                 Debug.Log("ThrowAttack2");
             }
         }
-        if (enemyChoice == 3)
+        if (enemyChoice == 3 && tempfix2)
         {
             enemyChoiceAnim.Play("SelectEnemy3");
             if (Input.GetMouseButtonDown(0))
@@ -320,4 +323,10 @@ public class BattleMenu : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.01f);
         tempfix = true;
     }
+    IEnumerator TempFix2()
+    {
+        yield return new WaitForSecondsRealtime(0.01f);
+        tempfix2 = true;
+    }
+
 }
