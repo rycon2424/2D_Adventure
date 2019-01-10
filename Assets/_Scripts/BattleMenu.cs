@@ -6,10 +6,27 @@ using UnityEngine.UI;
 public class BattleMenu : MonoBehaviour
 {
 
+    [Header("Enemy Names")]
+    public string enemyName1;
+    public RawImage enemy1Sprite;
+    public string enemyName2;
+    public RawImage enemy2Sprite;
+    public string enemyName3;
+    public RawImage enemy3Sprite;
+    public Texture[] enemySprites = new Texture[3];
+
+    [Header("Background")]
+    public string areaName;
+    public RawImage background;
+    public Texture[] backgrounds = new Texture[3];
+    [Header("EnemyNumbers")]
+    public int enemyCount;
+    public GameObject[] enemys = new GameObject[3];
+
     private bool tempfix;
     private bool tempfix2;
-    public GameObject wholeChoiceBar;
     [Header("Attack Options")]
+    public GameObject wholeChoiceBar;
     public Animator choiceAnimation;
     public GameObject choiceIcon;
     private int choice;
@@ -23,19 +40,12 @@ public class BattleMenu : MonoBehaviour
     public bool characterSelected;
     public GameObject fingerObject;
     public Animator fingerAnimation;
-    [Header("Background")]
-    public RawImage background;
-    public Texture[] backgrounds = new Texture[3];
-    [Header("Background")]
-    public int enemyCount;
-    public GameObject[] enemys = new GameObject[3];
 
     void Start()
     {
         choiceMade = false;
         chooseEnemyIcon.SetActive(false);
         choiceIcon.SetActive(false);
-        background.texture = backgrounds[0];
         if (enemyCount > 0)
         {
             enemys[0].SetActive(true);
@@ -64,6 +74,9 @@ public class BattleMenu : MonoBehaviour
 
     void Update()
     {
+
+        BattleSettings();
+
         if (!characterSelected)
         {
             SelectCharacter();
@@ -327,6 +340,35 @@ public class BattleMenu : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.01f);
         tempfix2 = true;
+    }
+
+
+    void BattleSettings()
+    {
+        #region Enemy Sprites
+        if (enemyCount > 0)
+        {
+            if (enemyName1 == "Rebecca")
+            {
+                enemy1Sprite.texture = enemySprites[0];
+            }
+        }
+        if (enemyCount > 1)
+        {
+            
+        }
+        if (enemyCount > 2)
+        {
+            
+        }
+        #endregion
+
+        #region Backgrounds
+        if (areaName == "Beach")
+        {
+            background.texture = backgrounds[0];
+        }
+        #endregion
     }
 
 }
