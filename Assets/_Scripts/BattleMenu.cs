@@ -33,6 +33,8 @@ public class BattleMenu : MonoBehaviour
     private bool choiceMade;
     public int whatCharacter = 1;
     [Header("Choose Enemy")]
+    public GameObject enemyNameBar;
+    public Text displayedEnemyName;
     public GameObject chooseEnemyIcon;
     public Animator enemyChoiceAnim;
     private int enemyChoice = 1;
@@ -46,6 +48,7 @@ public class BattleMenu : MonoBehaviour
         choiceMade = false;
         chooseEnemyIcon.SetActive(false);
         choiceIcon.SetActive(false);
+        enemyNameBar.SetActive(false);
         if (enemyCount > 0)
         {
             enemys[0].SetActive(true);
@@ -185,6 +188,7 @@ public class BattleMenu : MonoBehaviour
                 choiceIcon.SetActive(false);
                 choiceMade = true;
                 chooseEnemyIcon.SetActive(true);
+                enemyNameBar.SetActive(true);
                 StartCoroutine(TempFix2());
             }
         }
@@ -251,6 +255,7 @@ public class BattleMenu : MonoBehaviour
             choiceIcon.SetActive(true);
             chooseEnemyIcon.SetActive(false);
             tempfix2 = false;
+            enemyNameBar.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -278,6 +283,7 @@ public class BattleMenu : MonoBehaviour
         if (enemyChoice == 1 && tempfix2)
         {
             enemyChoiceAnim.Play("SelectEnemy1");
+            displayedEnemyName.text = enemyName1;
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("ThrowAttack1");
@@ -286,6 +292,7 @@ public class BattleMenu : MonoBehaviour
         if (enemyChoice == 2 && tempfix2)
         {
             enemyChoiceAnim.Play("SelectEnemy2");
+            displayedEnemyName.text = enemyName2;
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("ThrowAttack2");
@@ -294,6 +301,7 @@ public class BattleMenu : MonoBehaviour
         if (enemyChoice == 3 && tempfix2)
         {
             enemyChoiceAnim.Play("SelectEnemy3");
+            displayedEnemyName.text = enemyName3;
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("ThrowAttack3");
