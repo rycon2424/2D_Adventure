@@ -18,6 +18,13 @@ public class _Player : MonoBehaviour
     void Update()
     {
         PlayerAnimation();
+        PlayerMovement();
+    }
+
+    #region Player Movement/Animation
+
+    void PlayerMovement()
+    {
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector2.left * speed * Time.deltaTime);
@@ -54,7 +61,6 @@ public class _Player : MonoBehaviour
         {
             speed = originalSpeed;
         }
-        
     }
 
     void PlayerAnimation()
@@ -96,5 +102,7 @@ public class _Player : MonoBehaviour
             playerAnim.Play("Idle_Right");
         }
     }
+
+#endregion
 
 }

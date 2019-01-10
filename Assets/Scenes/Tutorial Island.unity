@@ -13061,6 +13061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerBoy
       objectReference: {fileID: 0}
+    - target: {fileID: 454691231, guid: 39aa12bb304edba46bd13561be1dbe1a, type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 468503948138681868, guid: 39aa12bb304edba46bd13561be1dbe1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13120,10 +13124,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 454691231, guid: 39aa12bb304edba46bd13561be1dbe1a, type: 3}
-      propertyPath: m_projectionMatrixMode
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4987014062602898677, guid: 39aa12bb304edba46bd13561be1dbe1a,
         type: 3}
