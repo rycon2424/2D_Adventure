@@ -6,9 +6,27 @@ using UnityEngine.UI;
 public class BattleMenu : MonoBehaviour
 {
 
+    [Header("Enemy Names")]
+    public string enemyName1;
+    public RawImage enemy1Sprite;
+    public string enemyName2;
+    public RawImage enemy2Sprite;
+    public string enemyName3;
+    public RawImage enemy3Sprite;
+    public Texture[] enemySprites = new Texture[3];
+
+    [Header("Background")]
+    public string areaName;
+    public RawImage background;
+    public Texture[] backgrounds = new Texture[3];
+    [Header("EnemyNumbers")]
+    public int enemyCount;
+    public GameObject[] enemys = new GameObject[3];
+
     private bool tempfix;
-    public GameObject wholeChoiceBar;
+    private bool tempfix2;
     [Header("Attack Options")]
+    public GameObject wholeChoiceBar;
     public Animator choiceAnimation;
     public GameObject choiceIcon;
     private int choice;
@@ -22,19 +40,12 @@ public class BattleMenu : MonoBehaviour
     public bool characterSelected;
     public GameObject fingerObject;
     public Animator fingerAnimation;
-    [Header("Background")]
-    public RawImage background;
-    public Texture[] backgrounds = new Texture[3];
-    [Header("Background")]
-    public int enemyCount;
-    public GameObject[] enemys = new GameObject[3];
 
     void Start()
     {
         choiceMade = false;
         chooseEnemyIcon.SetActive(false);
         choiceIcon.SetActive(false);
-        background.texture = backgrounds[0];
         if (enemyCount > 0)
         {
             enemys[0].SetActive(true);
@@ -63,6 +74,9 @@ public class BattleMenu : MonoBehaviour
 
     void Update()
     {
+
+        BattleSettings();
+
         if (!characterSelected)
         {
             SelectCharacter();
@@ -171,6 +185,7 @@ public class BattleMenu : MonoBehaviour
                 choiceIcon.SetActive(false);
                 choiceMade = true;
                 chooseEnemyIcon.SetActive(true);
+                StartCoroutine(TempFix2());
             }
         }
         else if (choice == 2)
@@ -235,6 +250,7 @@ public class BattleMenu : MonoBehaviour
             choiceMade = false;
             choiceIcon.SetActive(true);
             chooseEnemyIcon.SetActive(false);
+            tempfix2 = false;
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -259,7 +275,7 @@ public class BattleMenu : MonoBehaviour
              }
         }
         
-        if (enemyChoice == 1)
+        if (enemyChoice == 1 && tempfix2)
         {
             enemyChoiceAnim.Play("SelectEnemy1");
             if (Input.GetMouseButtonDown(0))
@@ -267,7 +283,7 @@ public class BattleMenu : MonoBehaviour
                 Debug.Log("ThrowAttack1");
             }
         }
-        if (enemyChoice == 2)
+        if (enemyChoice == 2 && tempfix2)
         {
             enemyChoiceAnim.Play("SelectEnemy2");
             if (Input.GetMouseButtonDown(0))
@@ -275,7 +291,7 @@ public class BattleMenu : MonoBehaviour
                 Debug.Log("ThrowAttack2");
             }
         }
-        if (enemyChoice == 3)
+        if (enemyChoice == 3 && tempfix2)
         {
             enemyChoiceAnim.Play("SelectEnemy3");
             if (Input.GetMouseButtonDown(0))
@@ -320,4 +336,39 @@ public class BattleMenu : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.01f);
         tempfix = true;
     }
+    IEnumerator TempFix2()
+    {
+        yield return new WaitForSecondsRealtime(0.01f);
+        tempfix2 = true;
+    }
+
+
+    void BattleSettings()
+    {
+        #region Enemy Sprites
+        if (enemyCount > 0)
+        {
+            if (enemyName1 == "Rebecca")
+            {
+                enemy1Sprite.texture = enemySprites[0];
+            }
+        }
+        if (enemyCount > 1)
+        {
+            
+        }
+        if (enemyCount > 2)
+        {
+            
+        }
+        #endregion
+
+        #region Backgrounds
+        if (areaName == "Beach")
+        {
+            background.texture = backgrounds[0];
+        }
+        #endregion
+    }
+
 }
