@@ -8,6 +8,7 @@ public class BattleMenu : MonoBehaviour
     //turn = who.player;
     public enum who { player, enemy1, enemy2, enemy3};
     public who turn;
+
     private BattlePartyInfo chars;
 
     [Header("Enemy Names")]
@@ -32,6 +33,7 @@ public class BattleMenu : MonoBehaviour
     [Header("Attack Options")]
     public GameObject wholeChoiceBar;
     public Animator choiceAnimation;
+    public GameObject playerInfoBar;
     public GameObject choiceIcon;
     private int choice;
     private bool choiceMade;
@@ -85,20 +87,23 @@ public class BattleMenu : MonoBehaviour
 
         BattleSettings();
 
-        if (!characterSelected)
+        if (turn == who.player)
         {
-            SelectCharacter();
-            wholeChoiceBar.SetActive(false);
-        }
-        if (characterSelected && !choiceMade)
-        {
-            SelectOption();
-            wholeChoiceBar.SetActive(true);
-        }
-        if (choiceMade)
-        {
-            ShowOptions();
-            wholeChoiceBar.SetActive(false);
+            if (!characterSelected)
+            {
+                SelectCharacter();
+                wholeChoiceBar.SetActive(false);
+            }
+            if (characterSelected && !choiceMade)
+            {
+                SelectOption();
+                wholeChoiceBar.SetActive(true);
+            }
+            if (choiceMade)
+            {
+                ShowOptions();
+                wholeChoiceBar.SetActive(false);
+            }
         }
     }
 
@@ -171,7 +176,7 @@ public class BattleMenu : MonoBehaviour
         {
             fingerAnimation.Play("FingerAnimationPlayer3");
         }
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             choice = 1;
             characterSelected = true;
@@ -209,7 +214,7 @@ public class BattleMenu : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             fingerObject.SetActive(true);
             choiceIcon.SetActive(false);
@@ -220,7 +225,7 @@ public class BattleMenu : MonoBehaviour
         if (choice == 1 && tempfix)
         {
             choiceAnimation.Play("Attack");
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 choiceIcon.SetActive(false);
                 choiceMade = true;
@@ -237,7 +242,7 @@ public class BattleMenu : MonoBehaviour
         else if (choice == 3)
         {
             choiceAnimation.Play("Magic");
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 choiceIcon.SetActive(false);
                 choiceMade = true;
@@ -246,7 +251,7 @@ public class BattleMenu : MonoBehaviour
         else if (choice == 4)
         {
             choiceAnimation.Play("Inventory");
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 choiceIcon.SetActive(false);
                 choiceMade = true;
@@ -286,7 +291,7 @@ public class BattleMenu : MonoBehaviour
     // FINAL CHOICE VV
     void Attack()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             choiceMade = false;
             choiceIcon.SetActive(true);
@@ -321,40 +326,43 @@ public class BattleMenu : MonoBehaviour
         {
             enemyChoiceAnim.Play("SelectEnemy1");
             displayedEnemyName.text = enemyName1;
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("ThrowAttack1");
+                NextTurn();
             }
         }
         if (enemyChoice == 2 && tempfix2)
         {
             enemyChoiceAnim.Play("SelectEnemy2");
             displayedEnemyName.text = enemyName2;
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("ThrowAttack2");
+                NextTurn();
             }
         }
         if (enemyChoice == 3 && tempfix2)
         {
             enemyChoiceAnim.Play("SelectEnemy3");
             displayedEnemyName.text = enemyName3;
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("ThrowAttack3");
+                NextTurn();
             }
         }
     }
     void Shield()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKey(KeyCode.Space))
         {
             Debug.Log("Heal for 10%");
         }
     }
     void Magic()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             choiceMade = false;
             choiceIcon.SetActive(true);
@@ -362,7 +370,7 @@ public class BattleMenu : MonoBehaviour
     }
     void Inventory()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             choiceMade = false;
             choiceIcon.SetActive(true);
@@ -370,7 +378,7 @@ public class BattleMenu : MonoBehaviour
     }
     void Flee()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKey(KeyCode.Space))
         {
             Debug.Log("Flee");
         }
@@ -414,6 +422,36 @@ public class BattleMenu : MonoBehaviour
             background.texture = backgrounds[0];
         }
         #endregion
+    }
+
+    public void NextTurn()
+    {
+        if (turn == who.player)
+        {
+            int randomInt;
+            randomInt = Random.Range(1, enemyCount + 1);
+            Debug.Log("EnemyTurn " + randomInt);
+            switch (enemyCount)
+            {
+                case 1:
+                    turn = who.enemy1;
+                    break;
+                case 2:
+                    turn = who.enemy2;
+                    break;
+                case 3:
+                    turn = who.enemy3;
+                    break;
+            }
+            enemyNameBar.SetActive(false);
+            chooseEnemyIcon.SetActive(false);
+            wholeChoiceBar.SetActive(false);
+            playerInfoBar.SetActive(false);
+        }
+        else
+        {
+            turn = who.player;
+        }
     }
 
 }
