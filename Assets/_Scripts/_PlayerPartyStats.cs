@@ -30,12 +30,10 @@ public class _PlayerPartyStats : MonoBehaviour
     }
 
     #endregion
-
     
-
     private void Start()
     {
-        
+
     }
 
     private void Update()
