@@ -19,6 +19,7 @@ public class _Player : MonoBehaviour
     {
         PlayerAnimation();
         PlayerMovement();
+        Pause();
     }
 
     #region Player Movement/Animation
@@ -103,6 +104,20 @@ public class _Player : MonoBehaviour
         }
     }
 
-#endregion
+    #endregion
+
+    #region Logistics
+    public GameObject pauseMenu;
+    private bool pauseMenuSwitch = false;
+    private void Pause()
+    {
+        pauseMenuSwitch = pauseMenu.activeSelf;
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            pauseMenuSwitch = !pauseMenuSwitch;
+            pauseMenu.SetActive(pauseMenuSwitch);
+        }
+    }
+    #endregion
 
 }

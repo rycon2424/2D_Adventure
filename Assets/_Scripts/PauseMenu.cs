@@ -31,6 +31,10 @@ public class PauseMenu : MonoBehaviour
                     active--;
                 }
             }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                this.gameObject.SetActive(false);
+            }
         }
         MenuSelector();
 
