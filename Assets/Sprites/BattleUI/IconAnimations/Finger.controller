@@ -29,7 +29,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FingerAnimationPlayer2
+  m_Name: FingerAnimationPlayer1
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -55,7 +55,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FingerAnimationPlayer1
+  m_Name: FingerAnimationPlayer2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -111,13 +111,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102171605293241450}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 264, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102159127017127780}
-    m_Position: {x: 235, y: 65, z: 0}
+    m_Position: {x: 228, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102583317183379704}
-    m_Position: {x: 270, y: 130, z: 0}
+    m_Position: {x: 288, y: 120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -127,4 +127,4 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102171605293241450}
+  m_DefaultState: {fileID: 1102159127017127780}

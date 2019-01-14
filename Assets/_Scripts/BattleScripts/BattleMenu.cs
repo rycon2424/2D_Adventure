@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class BattleMenu : MonoBehaviour
 {
+    //turn = who.player;
+    public enum who { player, enemy1, enemy2, enemy3};
+    public who turn;
+    private BattlePartyInfo chars;
 
     [Header("Enemy Names")]
     public string enemyName1;
@@ -45,6 +49,7 @@ public class BattleMenu : MonoBehaviour
 
     void Start()
     {
+        chars = GameObject.FindGameObjectWithTag("PlayerPartyStats").GetComponent<BattlePartyInfo>();
         choiceMade = false;
         chooseEnemyIcon.SetActive(false);
         choiceIcon.SetActive(false);
@@ -100,28 +105,60 @@ public class BattleMenu : MonoBehaviour
     // FIRST OPTION
     void SelectCharacter()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (chars.numberOfPartyMembers != 1)
         {
-            if (whatCharacter == 3)
+            if (chars.numberOfPartyMembers == 2)
             {
-                whatCharacter = 1;
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    if (whatCharacter == 2)
+                    {
+                        whatCharacter = 1;
+                    }
+                    else
+                    {
+                        whatCharacter++;
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    if (whatCharacter == 1)
+                    {
+                        whatCharacter = 2;
+                    }
+                    else
+                    {
+                        whatCharacter--;
+                    }
+                }
             }
             else
             {
-                whatCharacter++;
-            }
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    if (whatCharacter == 3)
+                    {
+                        whatCharacter = 1;
+                    }
+                    else
+                    {
+                        whatCharacter++;
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    if (whatCharacter == 1)
+                    {
+                        whatCharacter = 3;
+                    }
+                    else
+                    {
+                        whatCharacter--;
+                    }
+                }
+            }    
         }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            if (whatCharacter == 1)
-            {
-                whatCharacter = 3;
-            }
-            else
-            {
-                whatCharacter--;
-            }
-        }
+        
         if (whatCharacter == 1)
         {
             fingerAnimation.Play("FingerAnimationPlayer1");
@@ -245,7 +282,7 @@ public class BattleMenu : MonoBehaviour
             Flee();
         }
     }
-    
+
     // FINAL CHOICE VV
     void Attack()
     {
