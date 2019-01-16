@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-
-    public Text party, inventory, skills, save, exit;
+    [Header("Menu Object References")]
+    public Text party;
+    public Text inventory, skills, save, exit;
     public GameObject partyMenu, inventoryMenu, skillsMenu, saveMenu;
     private enum Menus {none,party,inventory,skills,save};
     private Menus currentMenu;
