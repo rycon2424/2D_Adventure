@@ -1,18 +1,16 @@
 fileFormatVersion: 2
-guid: 73de569ccb1854544994d37e28e79b4e
+guid: 8ae6e20a35a5c9248af2a0713fe5af16
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Scratch_0
-    21300002: Scratch_1
-    21300004: Scratch_2
-    21300006: Scratch_3
-    21300008: Scratch_4
-    21300010: Scratch_5
-    21300012: Scratch_6
-    21300014: Scratch_7
-    21300016: Scratch_8
-    21300018: Scratch_9
-    21300020: Scratch_10
+    21300000: Lightning_0
+    21300002: Lightning_1
+    21300004: Lightning_2
+    21300006: Lightning_3
+    21300008: Lightning_4
+    21300010: Lightning_5
+    21300012: Lightning_6
+    21300014: Lightning_7
+    21300016: Lightning_8
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -95,7 +93,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Scratch_0
+      name: Lightning_0
       rect:
         serializedVersion: 2
         x: 0
@@ -109,13 +107,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74264bd5850f522469f150b1f2b045d4
+      spriteID: 866ccb8391e1c7b48a2f99b73cd27dbd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_1
+      name: Lightning_1
       rect:
         serializedVersion: 2
         x: 32
@@ -129,13 +127,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b55414314f4ce134e91c0665a847321c
+      spriteID: 18e38849dc64a1349932c6e1acbabaca
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_2
+      name: Lightning_2
       rect:
         serializedVersion: 2
         x: 64
@@ -149,13 +147,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddf268df0bb6b8c418cf999316a109e3
+      spriteID: 0a5eb535a3cefa34fa8033a53b97fa1c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_3
+      name: Lightning_3
       rect:
         serializedVersion: 2
         x: 96
@@ -169,13 +167,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c8d9549b1a6a0c4997d3fa4b346a847
+      spriteID: fbac0e91a937c124fa0ede7ee6dae5e9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_4
+      name: Lightning_4
       rect:
         serializedVersion: 2
         x: 128
@@ -189,13 +187,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9f08ae766efe0948b28d2d432a558c3
+      spriteID: 7745d772c43ac574bbc20479b2c8db34
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_5
+      name: Lightning_5
       rect:
         serializedVersion: 2
         x: 160
@@ -209,13 +207,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dae1e8aab12263b449b20d273c83040f
+      spriteID: 98cc3e87c6d3dd94aa3b707895f882f0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_6
+      name: Lightning_6
       rect:
         serializedVersion: 2
         x: 192
@@ -229,13 +227,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ae6f561bbdf15040940000acd187942
+      spriteID: 034f41b4c764b02408276cd5a3486eef
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_7
+      name: Lightning_7
       rect:
         serializedVersion: 2
         x: 224
@@ -249,13 +247,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3d9d0b78fcd1214fa4b69a54187c6b6
+      spriteID: 3993dd455c1ba524c8cc3d1852c5cce5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_8
+      name: Lightning_8
       rect:
         serializedVersion: 2
         x: 256
@@ -269,47 +267,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99a4caf10835a154898b580229b0f6f2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Scratch_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf5d376cb10e0ec4bbe552f26e781bd7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Scratch_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3f70c5cc4439eb43bdae161cc742006
+      spriteID: df2d962147e248a419ea95e6f2fad428
       vertices: []
       indices: 
       edges: []
@@ -317,7 +275,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: abdc30581195a494b8cbd62a4a8d411c
+    spriteID: bc191f8d98e6b0640afa888139ab3519
     vertices: []
     indices: 
     edges: []

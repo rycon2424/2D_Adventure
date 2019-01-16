@@ -1,18 +1,17 @@
 fileFormatVersion: 2
-guid: 73de569ccb1854544994d37e28e79b4e
+guid: 08280b934373774458efa1029610b4f8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Scratch_0
-    21300002: Scratch_1
-    21300004: Scratch_2
-    21300006: Scratch_3
-    21300008: Scratch_4
-    21300010: Scratch_5
-    21300012: Scratch_6
-    21300014: Scratch_7
-    21300016: Scratch_8
-    21300018: Scratch_9
-    21300020: Scratch_10
+    21300000: LavaCrush_0
+    21300002: LavaCrush_1
+    21300004: LavaCrush_2
+    21300006: LavaCrush_3
+    21300008: LavaCrush_4
+    21300010: LavaCrush_5
+    21300012: LavaCrush_6
+    21300014: LavaCrush_7
+    21300016: LavaCrush_8
+    21300018: LavaCrush_9
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -95,7 +94,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Scratch_0
+      name: LavaCrush_0
       rect:
         serializedVersion: 2
         x: 0
@@ -109,13 +108,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74264bd5850f522469f150b1f2b045d4
+      spriteID: 437be7938c696dd459c36a2cc9ffb674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_1
+      name: LavaCrush_1
       rect:
         serializedVersion: 2
         x: 32
@@ -129,13 +128,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b55414314f4ce134e91c0665a847321c
+      spriteID: c1c8aac7422c1c8499347850210992a2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_2
+      name: LavaCrush_2
       rect:
         serializedVersion: 2
         x: 64
@@ -149,13 +148,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddf268df0bb6b8c418cf999316a109e3
+      spriteID: 26b878ec98cd3c34fb5468253d98743a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_3
+      name: LavaCrush_3
       rect:
         serializedVersion: 2
         x: 96
@@ -169,13 +168,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c8d9549b1a6a0c4997d3fa4b346a847
+      spriteID: 382a4f78c2195e647bb3a1d5c2fcd726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_4
+      name: LavaCrush_4
       rect:
         serializedVersion: 2
         x: 128
@@ -189,13 +188,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9f08ae766efe0948b28d2d432a558c3
+      spriteID: 91b8dfa42c8b4b5408ce480c794c9943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_5
+      name: LavaCrush_5
       rect:
         serializedVersion: 2
         x: 160
@@ -209,13 +208,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dae1e8aab12263b449b20d273c83040f
+      spriteID: fa7cede088e1198459d57f9d4d7a045a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_6
+      name: LavaCrush_6
       rect:
         serializedVersion: 2
         x: 192
@@ -229,13 +228,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ae6f561bbdf15040940000acd187942
+      spriteID: 8f990f3f68438be4098a6b677f9652fe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_7
+      name: LavaCrush_7
       rect:
         serializedVersion: 2
         x: 224
@@ -249,13 +248,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3d9d0b78fcd1214fa4b69a54187c6b6
+      spriteID: 2dded4740b7168b4ba20a35bd2d77b55
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_8
+      name: LavaCrush_8
       rect:
         serializedVersion: 2
         x: 256
@@ -269,13 +268,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99a4caf10835a154898b580229b0f6f2
+      spriteID: 47584daf133ba5b4c92ba5ea9e41e2bb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scratch_9
+      name: LavaCrush_9
       rect:
         serializedVersion: 2
         x: 288
@@ -289,27 +288,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf5d376cb10e0ec4bbe552f26e781bd7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Scratch_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3f70c5cc4439eb43bdae161cc742006
+      spriteID: 21144bfd0e45c91428b38df39a9035ea
       vertices: []
       indices: 
       edges: []
@@ -317,7 +296,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: abdc30581195a494b8cbd62a4a8d411c
+    spriteID: c3b41cd4b2cc28e419dd0b0c3ccb48a5
     vertices: []
     indices: 
     edges: []
