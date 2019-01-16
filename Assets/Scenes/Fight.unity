@@ -314,6 +314,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn: 0
+  selectedCharacterName: 
+  enemyHP1: 500
+  enemyHP2: 500
+  enemyHP3: 500
   enemyName1: Rebecca
   enemy1Sprite: {fileID: 1501590281}
   enemyName2: IamJakeHill
@@ -343,10 +347,15 @@ MonoBehaviour:
   enemyNameBar: {fileID: 282286914}
   displayedEnemyName: {fileID: 561937750}
   chooseEnemyIcon: {fileID: 1464846011}
+  chooseEnemySR: {fileID: 1464846013}
   enemyChoiceAnim: {fileID: 1954677473}
   characterSelected: 0
   fingerObject: {fileID: 493128069}
   fingerAnimation: {fileID: 493128071}
+  effect1: {fileID: 464869097}
+  effect2: {fileID: 1395016134}
+  effect3: {fileID: 1387964963}
+  effectPlayer: {fileID: 761756329}
 --- !u!1 &75081365
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,9 +718,9 @@ MonoBehaviour:
   stats: {fileID: 0}
   numberOfPartyMembers: 3
   partyNames:
-  - gay
-  - autism
-  - XD
+  - Player
+  - test
+  - test
   playerUis:
   - {fileID: 112276054}
   - {fileID: 940636085}
@@ -1829,7 +1838,7 @@ GameObject:
   - component: {fileID: 464869098}
   - component: {fileID: 464869097}
   m_Layer: 0
-  m_Name: Effect
+  m_Name: Effect 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1905,7 +1914,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1000
-  m_Sprite: {fileID: 21300000, guid: 6d01cf05314da66479aff580ffbff361, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1913,7 +1922,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &493128069
@@ -2565,7 +2574,7 @@ GameObject:
   - component: {fileID: 761756330}
   - component: {fileID: 761756329}
   m_Layer: 0
-  m_Name: Effect
+  m_Name: Effect Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2641,7 +2650,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1000
-  m_Sprite: {fileID: 21300000, guid: 6d01cf05314da66479aff580ffbff361, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2649,7 +2658,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &788409830
@@ -4156,7 +4165,7 @@ GameObject:
   - component: {fileID: 1387964964}
   - component: {fileID: 1387964963}
   m_Layer: 0
-  m_Name: Effect
+  m_Name: Effect 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4232,7 +4241,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1000
-  m_Sprite: {fileID: 21300000, guid: 6d01cf05314da66479aff580ffbff361, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4240,7 +4249,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1395016133
@@ -4255,7 +4264,7 @@ GameObject:
   - component: {fileID: 1395016135}
   - component: {fileID: 1395016134}
   m_Layer: 0
-  m_Name: Effect
+  m_Name: Effect 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4317,7 +4326,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1000
-  m_Sprite: {fileID: 21300000, guid: 6d01cf05314da66479aff580ffbff361, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4325,7 +4334,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1395016136
@@ -4629,7 +4638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.15886435, g: 0.34513062, b: 0.9622642, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

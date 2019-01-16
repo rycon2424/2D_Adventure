@@ -6,10 +6,21 @@ using UnityEngine.UI;
 public class BattleMenu : MonoBehaviour
 {
     //turn = who.player;
-    public enum who { player, enemy1, enemy2, enemy3};
-    public who turn;
+    private enum who { player, enemy1, enemy2, enemy3};
+    private who turn;
 
-    private BattlePartyInfo chars;
+    private BattlePartyInfo battlePartyRef;
+
+    [Header("Party Stats")]
+    public string selectedCharacterName;
+
+    [Header("Enemy Health")]
+    public int enemyHP1;
+    private int maxHpEnemy1;
+    public int enemyHP2;
+    private int maxHpEnemy2;
+    public int enemyHP3;
+    private int maxHpEnemy3;
 
     [Header("Enemy Names")]
     public string enemyName1;
@@ -30,28 +41,43 @@ public class BattleMenu : MonoBehaviour
 
     private bool tempfix;
     private bool tempfix2;
+
     [Header("Attack Options")]
     public GameObject wholeChoiceBar;
     public Animator choiceAnimation;
     public GameObject playerInfoBar;
     public GameObject choiceIcon;
     private int choice;
-    private bool choiceMade;
+    public bool choiceMade;
     public int whatCharacter = 1;
+
     [Header("Choose Enemy")]
     public GameObject enemyNameBar;
     public Text displayedEnemyName;
     public GameObject chooseEnemyIcon;
+    public RawImage chooseEnemySR;
     public Animator enemyChoiceAnim;
     private int enemyChoice = 1;
+
     [Header("Finger Options")]
     public bool characterSelected;
     public GameObject fingerObject;
     public Animator fingerAnimation;
 
+    [Header("Effects Animator")]
+    public Animator effect1;
+    public Animator effect2;
+    public Animator effect3;
+    public Animator effectPlayer;
+
     void Start()
     {
-        chars = GameObject.FindGameObjectWithTag("PlayerPartyStats").GetComponent<BattlePartyInfo>();
+        #region EnemyHealthSystem
+        maxHpEnemy1 = enemyHP1;
+        maxHpEnemy2 = enemyHP2;
+        maxHpEnemy3 = enemyHP3;
+        #endregion
+        battlePartyRef = GameObject.FindGameObjectWithTag("PlayerPartyStats").GetComponent<BattlePartyInfo>();
         choiceMade = false;
         chooseEnemyIcon.SetActive(false);
         choiceIcon.SetActive(false);
@@ -94,7 +120,7 @@ public class BattleMenu : MonoBehaviour
                 SelectCharacter();
                 wholeChoiceBar.SetActive(false);
             }
-            if (characterSelected && !choiceMade)
+            if (characterSelected && choiceMade == false)
             {
                 SelectOption();
                 wholeChoiceBar.SetActive(true);
@@ -107,12 +133,14 @@ public class BattleMenu : MonoBehaviour
         }
     }
 
+    #region PlayerInfo
+
     // FIRST OPTION
     void SelectCharacter()
     {
-        if (chars.numberOfPartyMembers != 1)
+        if (battlePartyRef.numberOfPartyMembers != 1)
         {
-            if (chars.numberOfPartyMembers == 2)
+            if (battlePartyRef.numberOfPartyMembers == 2)
             {
                 if (Input.GetKeyDown(KeyCode.D))
                 {
@@ -166,17 +194,20 @@ public class BattleMenu : MonoBehaviour
         
         if (whatCharacter == 1)
         {
+            selectedCharacterName = battlePartyRef.partyNames[0];
             fingerAnimation.Play("FingerAnimationPlayer1");
         }
         else if (whatCharacter == 2)
         {
+            selectedCharacterName = battlePartyRef.partyNames[1];
             fingerAnimation.Play("FingerAnimationPlayer2");
         }
         else if (whatCharacter == 3)
         {
+            selectedCharacterName = battlePartyRef.partyNames[2];
             fingerAnimation.Play("FingerAnimationPlayer3");
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J))
         {
             choice = 1;
             characterSelected = true;
@@ -191,6 +222,7 @@ public class BattleMenu : MonoBehaviour
     // SECOND OPTION
     void SelectOption()
     {
+        #region Hovering
         if (Input.GetKeyDown(KeyCode.D))
         {
             if (choice == 5)
@@ -213,7 +245,6 @@ public class BattleMenu : MonoBehaviour
                 choice--;
             }
         }
-
         if (Input.GetKeyDown(KeyCode.Q))
         {
             fingerObject.SetActive(true);
@@ -221,6 +252,7 @@ public class BattleMenu : MonoBehaviour
             characterSelected = false;
             tempfix = false;
         }
+        #endregion
 
         if (choice == 1 && tempfix)
         {
@@ -266,6 +298,7 @@ public class BattleMenu : MonoBehaviour
 
     void ShowOptions()
     {
+        #region Hovering
         if (choice == 1)
         {
             Attack();
@@ -286,11 +319,13 @@ public class BattleMenu : MonoBehaviour
         {
             Flee();
         }
+        #endregion
     }
 
     // FINAL CHOICE VV
     void Attack()
     {
+        #region Hovering
         if (Input.GetKeyDown(KeyCode.Q))
         {
             choiceMade = false;
@@ -312,23 +347,43 @@ public class BattleMenu : MonoBehaviour
             }
         if (Input.GetKeyDown(KeyCode.A))
         {
-                if (enemyChoice == 1)
+             if (enemyChoice == 1)
              {
                     enemyChoice = enemyCount;
              }
-                else
+             else
              {
                     enemyChoice--;
              }
         }
-        
+        #endregion
+        ///WHAT ENEMY
         if (enemyChoice == 1 && tempfix2)
         {
             enemyChoiceAnim.Play("SelectEnemy1");
             displayedEnemyName.text = enemyName1;
+            #region HealthIcon
+            if (enemyHP1 <= (maxHpEnemy1 / 4))
+            {
+                chooseEnemySR.color = Color.red;
+            }
+            else if (enemyHP1 <= (maxHpEnemy1 / 2))
+            {
+                chooseEnemySR.color = Color.yellow;
+            }
+            else
+            {
+                chooseEnemySR.color = Color.blue;
+            }
+            #endregion
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("ThrowAttack1");
+                #region Throw attack on 1 + Effect
+                if (selectedCharacterName == "Player")
+                {
+                    effect1.Play("Slash");
+                }
+                #endregion
                 NextTurn();
             }
         }
@@ -336,9 +391,28 @@ public class BattleMenu : MonoBehaviour
         {
             enemyChoiceAnim.Play("SelectEnemy2");
             displayedEnemyName.text = enemyName2;
+            #region HealthIcon
+            if (enemyHP2 <= (maxHpEnemy2 / 4))
+            {
+                chooseEnemySR.color = Color.red;
+            }
+            else if (enemyHP2 <= (maxHpEnemy2 / 2))
+            {
+                chooseEnemySR.color = Color.yellow;
+            }
+            else
+            {
+                chooseEnemySR.color = Color.blue;
+            }
+            #endregion
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("ThrowAttack2");
+                #region Throw attack on 2 + Effect
+                if (selectedCharacterName == "Player")
+                {
+                    effect2.Play("Slash");
+                }
+                #endregion
                 NextTurn();
             }
         }
@@ -346,9 +420,28 @@ public class BattleMenu : MonoBehaviour
         {
             enemyChoiceAnim.Play("SelectEnemy3");
             displayedEnemyName.text = enemyName3;
+            #region HealthIcon
+            if (enemyHP3 <= (maxHpEnemy3 / 4))
+            {
+                chooseEnemySR.color = Color.red;
+            }
+            else if (enemyHP3 <= (maxHpEnemy3 / 2))
+            {
+                chooseEnemySR.color = Color.yellow;
+            }
+            else
+            {
+                chooseEnemySR.color = Color.blue;
+            }
+            #endregion
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("ThrowAttack3");
+                #region Throw attack on 3 + Effect
+                if (selectedCharacterName == "Player")
+                {
+                    effect3.Play("Slash");
+                }
+                #endregion
                 NextTurn();
             }
         }
@@ -384,53 +477,26 @@ public class BattleMenu : MonoBehaviour
         }
     }
 
+    #endregion
+
     IEnumerator TempFix()
     {
-        yield return new WaitForSecondsRealtime(0.01f);
+        yield return null;
         tempfix = true;
     }
     IEnumerator TempFix2()
     {
-        yield return new WaitForSecondsRealtime(0.01f);
+        yield return null;
         tempfix2 = true;
     }
-
-
-    void BattleSettings()
-    {
-        #region Enemy Sprites
-        if (enemyCount > 0)
-        {
-            if (enemyName1 == "Rebecca")
-            {
-                enemy1Sprite.texture = enemySprites[0];
-            }
-        }
-        if (enemyCount > 1)
-        {
-            
-        }
-        if (enemyCount > 2)
-        {
-            
-        }
-        #endregion
-
-        #region Backgrounds
-        if (areaName == "Beach")
-        {
-            background.texture = backgrounds[0];
-        }
-        #endregion
-    }
-
-    public void NextTurn()
+    
+    public void NextTurn() ////TURN SYSTEM
     {
         if (turn == who.player)
         {
+            choice = 0;
             int randomInt;
             randomInt = Random.Range(1, enemyCount + 1);
-            Debug.Log("EnemyTurn " + randomInt);
             switch (enemyCount)
             {
                 case 1:
@@ -443,15 +509,76 @@ public class BattleMenu : MonoBehaviour
                     turn = who.enemy3;
                     break;
             }
+            Debug.Log(turn);
             enemyNameBar.SetActive(false);
             chooseEnemyIcon.SetActive(false);
             wholeChoiceBar.SetActive(false);
             playerInfoBar.SetActive(false);
+            EnemyTurn();
         }
         else
         {
             turn = who.player;
+            StartCoroutine(ResetPlayerTurn());
         }
     }
+
+    #region Enemy Settings & Attacks
+    void BattleSettings()
+    {
+        // Enemy Sprites
+        if (enemyCount > 0)
+        {
+            if (enemyName1 == "Rebecca")
+            {
+                enemy1Sprite.texture = enemySprites[0];
+            }
+        }
+        if (enemyCount > 1)
+        {
+            if (enemyName2 == "Test")
+            {
+                //enemy1Sprite.texture = enemySprites[0];
+            }
+        }
+        if (enemyCount > 2)
+        {
+            if (enemyName3 == "Test")
+            {
+                //enemy1Sprite.texture = enemySprites[0];
+            }
+        }
+
+        // Backgrounds
+        if (areaName == "Beach")
+        {
+            background.texture = backgrounds[0];
+        }
+    }
+
+    IEnumerator ResetPlayerTurn()
+    {
+        yield return new WaitForSeconds(3f);
+        characterSelected = false;
+        choiceMade = false;
+        chooseEnemyIcon.SetActive(false);
+        choiceIcon.SetActive(false);
+        wholeChoiceBar.SetActive(false);
+        enemyNameBar.SetActive(false);
+        fingerObject.SetActive(true);
+        playerInfoBar.SetActive(true);
+        tempfix = false;
+        tempfix2 = false;
+    }
+
+    void EnemyTurn()
+    {
+        int randomAttack;
+        randomAttack = Random.Range(1, battlePartyRef.numberOfPartyMembers + 1);
+        Debug.Log("Attack party member " + randomAttack);
+        NextTurn();
+    }
+
+    #endregion
 
 }
