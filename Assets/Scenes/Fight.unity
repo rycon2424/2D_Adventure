@@ -294,7 +294,7 @@ RectTransform:
   - {fileID: 282286915}
   - {fileID: 824056025}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -313,7 +313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a52d01fbb568d41b789eed763e3107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turn: 0
   selectedCharacterName: 
   enemyHP1: 500
   enemyHP2: 500
@@ -343,6 +342,7 @@ MonoBehaviour:
   choiceAnimation: {fileID: 1341404114}
   playerInfoBar: {fileID: 242705265}
   choiceIcon: {fileID: 1847606919}
+  choiceMade: 0
   whatCharacter: 1
   enemyNameBar: {fileID: 282286914}
   displayedEnemyName: {fileID: 561937750}
@@ -700,7 +700,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &112375871
 MonoBehaviour:
@@ -719,16 +719,16 @@ MonoBehaviour:
   numberOfPartyMembers: 3
   partyNames:
   - Player
-  - test
-  - test
+  - Ivan
+  - Rebecca
   playerUis:
   - {fileID: 112276054}
   - {fileID: 940636085}
   - {fileID: 1446919842}
   partyNamesText:
   - {fileID: 1762743688}
-  - {fileID: 283724424}
   - {fileID: 144252506}
+  - {fileID: 283724424}
   health: 010000000200000003000000
   stamina: 010000000200000003000000
   magicka: 010000000200000003000000
@@ -953,7 +953,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NAME
+  m_Text: PLAYER 2
 --- !u!222 &144252507
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1535,7 +1535,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NAME
+  m_Text: PLAYER 3
 --- !u!222 &283724425
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3237,7 +3237,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &990791051
 GameObject:
@@ -5294,7 +5294,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NAME
+  m_Text: PLAYER 1
 --- !u!222 &1762743689
 CanvasRenderer:
   m_ObjectHideFlags: 0

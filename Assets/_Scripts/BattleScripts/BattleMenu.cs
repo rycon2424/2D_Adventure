@@ -213,7 +213,6 @@ public class BattleMenu : MonoBehaviour
             characterSelected = true;
             fingerObject.SetActive(false);
             choiceIcon.SetActive(true);
-            Debug.Log("Character " + whatCharacter);
             StartCoroutine(TempFix());
         }
 
@@ -383,6 +382,14 @@ public class BattleMenu : MonoBehaviour
                 {
                     effect1.Play("Slash");
                 }
+                if (selectedCharacterName == "Rebecca")
+                {
+                    effect1.Play("BasicMagic");
+                }
+                if (selectedCharacterName == "Ivan")
+                {
+                    effect1.Play("GreenShot");
+                }
                 #endregion
                 NextTurn();
             }
@@ -411,6 +418,14 @@ public class BattleMenu : MonoBehaviour
                 if (selectedCharacterName == "Player")
                 {
                     effect2.Play("Slash");
+                }
+                if (selectedCharacterName == "Rebecca")
+                {
+                    effect2.Play("BasicMagic");
+                }
+                if (selectedCharacterName == "Ivan")
+                {
+                    effect2.Play("GreenShot");
                 }
                 #endregion
                 NextTurn();
@@ -441,6 +456,14 @@ public class BattleMenu : MonoBehaviour
                 {
                     effect3.Play("Slash");
                 }
+                if (selectedCharacterName == "Rebecca")
+                {
+                    effect3.Play("BasicMagic");
+                }
+                if (selectedCharacterName == "Ivan")
+                {
+                    effect3.Play("GreenShot");
+                }
                 #endregion
                 NextTurn();
             }
@@ -451,6 +474,8 @@ public class BattleMenu : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             Debug.Log("Heal for 10%");
+            choiceMade = true;
+            NextTurn();
         }
     }
     void Magic()
@@ -509,7 +534,7 @@ public class BattleMenu : MonoBehaviour
                     turn = who.enemy3;
                     break;
             }
-            Debug.Log(turn);
+            Debug.Log(turn +" has the turn;");
             enemyNameBar.SetActive(false);
             chooseEnemyIcon.SetActive(false);
             wholeChoiceBar.SetActive(false);
