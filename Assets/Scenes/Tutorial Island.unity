@@ -6891,6 +6891,121 @@ Transform:
   m_Father: {fileID: 1886973315}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1328216331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1328216333}
+  - component: {fileID: 1328216332}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1328216332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328216331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703cf5b647495364383b04e1bddd4174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xp: 0
+  level: 0
+  health: 0
+  stamina: 0
+  magica: 0
+  partyCount: 0
+  member1Name: 
+  member1Level: 0
+  member1XP: 0
+  member1Health: 0
+  member1Stamina: 0
+  member1Magica: 0
+  member2Name: 
+  member2Level: 0
+  member2XP: 0
+  member2Health: 0
+  member2Stamina: 0
+  member2Magica: 0
+  member3Name: 
+  member3Level: 0
+  member3XP: 0
+  member3Health: 0
+  member3Stamina: 0
+  member3Magica: 0
+  member4Name: 
+  member4Level: 0
+  member4XP: 0
+  member4Health: 0
+  member4Stamina: 0
+  member4Magica: 0
+  member5Name: 
+  member5Level: 0
+  member5XP: 0
+  member5Health: 0
+  member5Stamina: 0
+  member5Magica: 0
+  member6Name: 
+  member6Level: 0
+  member6XP: 0
+  member6Health: 0
+  member6Stamina: 0
+  member6Magica: 0
+  member7Name: 
+  member7Level: 0
+  member7XP: 0
+  member7Health: 0
+  member7Stamina: 0
+  member7Magica: 0
+  member8Name: 
+  member8Level: 0
+  member8XP: 0
+  member8Health: 0
+  member8Stamina: 0
+  member8Magica: 0
+  member9Name: 
+  member9Level: 0
+  member9XP: 0
+  member9Health: 0
+  member9Stamina: 0
+  member9Magica: 0
+  member10Name: 
+  member10Level: 0
+  member10XP: 0
+  member10Health: 0
+  member10Stamina: 0
+  member10Magica: 0
+  member11Name: 
+  member11Level: 0
+  member11XP: 0
+  member11Health: 0
+  member11Stamina: 0
+  member11Magica: 0
+--- !u!4 &1328216333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328216331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1535204915
 GameObject:
   m_ObjectHideFlags: 0

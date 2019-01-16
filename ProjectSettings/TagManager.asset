@@ -7,6 +7,7 @@ TagManager:
   - PlayerCanvas
   - SortingLayerTool
   - PlayerPartyStats
+  - GameManager
   layers:
   - Default
   - TransparentFX

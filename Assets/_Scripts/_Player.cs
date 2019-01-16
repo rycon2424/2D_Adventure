@@ -9,10 +9,13 @@ public class _Player : MonoBehaviour
     private float originalSpeed;
     public Animator playerAnim;
 
+    private _PlayerPartyStats gameManager;
+
     void Start()
     {
         originalSpeed = speed;
         playerAnim = GetComponent<Animator>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<_PlayerPartyStats>();
     }
     
     void Update()
@@ -20,6 +23,15 @@ public class _Player : MonoBehaviour
         PlayerAnimation();
         PlayerMovement();
         Pause();
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            gameManager.IncreaseParty("Ivan", Random.Range(1,20), Random.Range(1, 20), Random.Range(1, 20), Random.Range(1, 20));
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            gameManager.IncreaseParty("Rebecca", Random.Range(1, 20), Random.Range(1, 20), Random.Range(1, 20), Random.Range(1, 20));
+        }
     }
 
     #region Player Movement/Animation
